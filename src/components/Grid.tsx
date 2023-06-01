@@ -7,7 +7,9 @@ if (process.env.BROWSER) {
   require("../style/Grid.scss");
 }
 
-class Grid extends React.Component {
+type propsType = any;
+
+class Component extends React.Component<propsType> {
   padStr(input) {
     return (input < 10) ? "0" + input : "" + input;
   }
@@ -37,12 +39,9 @@ class Grid extends React.Component {
   }
 }
 
-Grid.contextType = FluxibleComponentContext;
-
-Grid = connectToStores(Grid, ["GridStore"], (context) => {
+Component.contextType = FluxibleComponentContext;
+export const Grid = connectToStores(Component, ["GridStore"], (context) => {
   return {
     data: context.getStore("GridStore").getData(),
   };
 }, { getStore: PropTypes.func });
-
-export default Grid;

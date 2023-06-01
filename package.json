@@ -1,52 +1,51 @@
 {
   "name": "test-react",
-  "version": "0.0.915",
+  "version": "0.1.0",
   "description": "React Daily Widgets",
+  "type": "module",
   "scripts": {
-    "dev": "BABEL_ENV=development node index"
+    "dev": "rm -rf lib && npx tsc && node ./lib/server"
   },
   "repository": {
     "type": "git",
     "url": "http://github.com/DailyDinities/test-react"
   },
   "engines": {
-    "node": "16.14.0",
-    "npm": "8.3.1"
+    "node": "v19.0.1",
+    "npm": "8.19.2"
   },
   "dependencies": {
-    "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.17.10",
-    "@babel/plugin-proposal-function-bind": "^7.16.7",
-    "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.17.10",
-    "@babel/preset-react": "^7.16.7",
-    "@babel/register": "^7.17.7",
-    "@hot-loader/react-dom": "^17.0.2",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.6",
-    "autoprefixer": "^10.4.2",
-    "babel-loader": "^8.2.5",
-    "css-loader": "^6.7.1",
     "d3": "^7.4.4",
-    "es6-promise": "^4.2.8",
-    "express": "^4.17.2",
-    "file-loader": "^6.2.0",
+    "express": "^4.18.1",
     "fluxible": "^1.4.2",
     "fluxible-addons-react": "^1.2.0",
     "fluxible-router": "^2.0.2",
-    "keymirror": "0.1.1",
-    "postcss-loader": "^6.2.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-refresh": "^0.13.0",
-    "sass": "^1.51.0",
-    "sass-loader": "^12.6.0",
-    "serialize-javascript": "^6.0.0",
-    "style-loader": "^3.3.1",
-    "webpack": "^5.72.1",
-    "webpack-error-notification": "0.1.8"
+    "react-i18next": "^11.16.9",
+    "react-linkify-it": "^1.0.6",
+    "react-transition-group": "^4.4.1",
+    "serialize-javascript": "^6.0.0"
   },
   "devDependencies": {
-    "webpack-dev-server": "^4.9.0"
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
+    "@types/express": "^4.17.14",
+    "@types/react": "^18.0.21",
+    "@types/webpack": "^5.28.0",
+    "autoprefixer": "^10.4.7",
+    "css-loader": "^6.7.1",
+    "postcss-inset": "^1.0.0",
+    "postcss-loader": "^7.0.0",
+    "react-refresh": "^0.13.0",
+    "sass": "^1.52.1",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.1.1",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.11.1"
   }
 }
