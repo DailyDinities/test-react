@@ -1,12 +1,12 @@
 import express from "express";
-import render from "./app/render";
+import render from "./server/render.js";
 
 // Initialize express server
 const server = express();
-server.use('/static', express.static('./src/assets/static'));
+server.use('/static', express.static('./src/assets'));
 
 // On development, serve the static files from the webpack dev server.
-require("../webpack/server");
+import("./webpack/server.js");
 server.use(render);
 
 // Generic server errors (e.g. not caught by components)
