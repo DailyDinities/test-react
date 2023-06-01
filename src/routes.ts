@@ -1,5 +1,5 @@
-import HomePage from "./HomePage";
-import GridAction from "../actions/GridAction";
+import { HomePage } from "./HomePage.js";
+import GridAction from "./actions/GridAction.js";
 
 export default {
   home: {
