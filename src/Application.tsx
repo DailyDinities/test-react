@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import { FluxibleComponentContext } from 'fluxible-addons-react';
 import { handleHistory } from "fluxible-router";
 
-class Application extends React.Component {
+type propsType = any;
+
+class Component extends React.Component<propsType> {
+  context: any;
+
   static propTypes = {
     // props coming from fluxible-router's handleHistory
     currentRoute: PropTypes.object,
@@ -11,15 +15,6 @@ class Application extends React.Component {
       statusCode: PropTypes.number.isRequired,
       message: PropTypes.string.isRequired
     })
-  }
-
-  componentDidMount() {
-    window.requestAnimFrame = (() => {
-      return window.requestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        function (callback) { window.setTimeout(callback, 1000 / 60); };
-    })();
   }
 
   render() {
@@ -35,10 +30,7 @@ class Application extends React.Component {
   }
 }
 
-Application.contextType = FluxibleComponentContext;
-
 // Wrap with fluxible-router's history handler (required for routing)
 // It also pass `currentRoute` as prop to the component
-Application = handleHistory(Application);
-
-export default Application;
+Component.contextType = FluxibleComponentContext;
+export const Application = handleHistory(Component);
