@@ -1,13 +1,15 @@
-import { BaseStore } from "fluxible/addons";
-import Actions from "../app/Actions";
+import { BaseStore } from "fluxible/addons/index.js";
 
-import GridData from "./GridData";
+import GridData from "./GridData.js";
 
 class GridStore extends BaseStore {
+  data: any;
+  emitChange: Function;
+
   static storeName = "GridStore"
 
   static handlers = {
-    [Actions.LOAD_GRID]: "handleApiOk",
+    "LOAD_GRID": "handleApiOk",
   }
 
   constructor(dispatcher) {
