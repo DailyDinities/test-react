@@ -1,9 +1,9 @@
 import Fluxible from "fluxible";
 import { RouteStore } from "fluxible-router";
 
-import routes from "./routes";
-import Application from "./Application";
-import GridStore from "../stores/GridStore";
+import routes from "./routes.js";
+import { Application } from "./Application.js";
+import GridStore from "./stores/GridStore.js";
 
 // Create the fluxible app using Application as root component
 const app = new Fluxible({ component: Application });
