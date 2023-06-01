@@ -6,7 +6,7 @@
 import fs from "fs";
 import path from "path";
 
-const filepath = path.resolve(__dirname, "../../src/app/webpack-stats.json");
+const filepath = path.resolve("./webpack-stats.json");
 
 export default class WriteStats {
   apply(compiler) {
