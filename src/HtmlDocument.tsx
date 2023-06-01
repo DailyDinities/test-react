@@ -2,7 +2,9 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { FluxibleComponentContext } from 'fluxible-addons-react';
 
-class HtmlDocument extends React.Component {
+type propsType = any;
+
+class Component extends React.Component<propsType> {
   static propTypes = {
     state: PropTypes.string.isRequired,
     script: PropTypes.arrayOf(PropTypes.string),
@@ -40,5 +42,5 @@ class HtmlDocument extends React.Component {
   }
 }
 
-HtmlDocument.contextType = FluxibleComponentContext;
-export default HtmlDocument;
+Component.contextType = FluxibleComponentContext;
+export const HtmlDocument = Component;
