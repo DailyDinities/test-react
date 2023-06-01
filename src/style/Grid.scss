@@ -25,8 +25,41 @@
       flex: 1;
       text-align: center;
 
+      .ChnKey {
+        background-color: $pub-intra-med;
+        color: $color-white;
+        padding: 10px 0;
+      }
+
       &:not(:last-child) {
         border-right: solid $grey-5 1px;
+      }
+    }
+
+    .Shows {
+
+      .Show {
+        display: flex;
+        overflow-y: hidden;
+
+        &:hover {
+          min-height: 80px;
+        }
+
+        .ShowMainInfos {
+          width: 100%;
+
+          .ShowHoursAndPDA {
+            border-top : 1px solid $pub-intra-med;
+            display : flex;
+            justify-content: space-around;
+            background-color: $grey-5;
+          }
+
+          .ShowTitle {
+            font-weight: 600;
+          }
+        }
       }
     }
   }
